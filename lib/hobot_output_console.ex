@@ -19,7 +19,7 @@ defmodule Hobot.Output.Console do
   end
 
   def handle_cast({:broadcast, topic, data}, topics) do
-    IO.inspect {topic, data}
+    IO.puts(inspect {topic, data})
     {:noreply, topics}
   end
 
