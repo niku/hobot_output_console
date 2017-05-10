@@ -38,7 +38,7 @@ defmodule Hobot.Output.Console.Mixfile do
   end
 
   defp description do
-    "TODO: Add description"
+    "An output plugin which writes messages to a console for hobot"
   end
 
   defp package do

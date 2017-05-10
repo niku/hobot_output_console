@@ -12,11 +12,12 @@ defmodule Hobot.Output.Console.Application do
     children = [
       # Starts a worker by calling: Hobot.Output.Console.Worker.start_link(arg1, arg2, arg3)
       # worker(Hobot.Output.Console.Worker, [arg1, arg2, arg3]),
+      worker(Hobot.Output.Console, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Hobot.Output.Console.Supervisor]
+    opts = [strategy: :simple_one_for_one, name: Hobot.Output.Console.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
