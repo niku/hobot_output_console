@@ -24,7 +24,7 @@ defmodule Hobot.Output.Console do
   end
 
   def terminate(reason, topics) do
-    for topic <- topics, do: Hobot.subscribe(topic)
+    for topic <- topics, do: Hobot.unsubscribe(topic)
     reason
   end
 end
